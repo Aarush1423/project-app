@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f7f8fa" />
+  <title>Project — Focused work, beautifully organized.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#projects" aria-label="Project home"><span class="brand-mark">✦</span><span>Project</span></a>
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <button class="nav-item active" data-view="projects"><span>▦</span> Projects</button>
+        <button class="nav-item" data-view="calendar"><span>◫</span> Calendar</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <button class="nav-item" data-view="settings"><span>⚙</span> Settings</button>
+        <div class="profile"><div class="avatar">AR</div><div><strong>Aarush</strong><small>Personal workspace</small></div><span class="more">•••</span></div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="mobile-header"><a class="brand" href="#projects"><span class="brand-mark">✦</span><span>Project</span></a><button class="icon-btn" id="mobile-menu" aria-label="Open menu">☰</button></header>
+      <section id="projects-view" class="view active-view">
+        <div class="page-heading"><div><p class="eyebrow" id="today-label">Wednesday, September 23, 2026</p><h1>Projects<span class="dot">.</span></h1><p class="subheading">A clear mind starts with a clear plan.</p></div><button class="button primary" id="new-project"><span>＋</span> New project</button></div>
+        <div class="stats-row"><div><span class="stat-label">All projects</span><strong id="project-count">0</strong></div><div><span class="stat-label">Tasks completed</span><strong id="task-count">0</strong></div><div><span class="stat-label">Due this month</span><strong id="due-count">0</strong></div></div>
+        <div class="section-title"><h2>Your workspace</h2><button class="filter-button">All projects <span>⌄</span></button></div>
+        <div class="project-grid" id="project-grid"></div>
+      </section>
+
+      <section id="details-view" class="view">
+        <button class="back-link" data-view="projects">← Back to projects</button>
+        <div id="project-details"></div>
+      </section>
+
+      <section id="calendar-view" class="view"><div class="page-heading"><div><p class="eyebrow">Your schedule</p><h1>Calendar<span class="dot">.</span></h1><p class="subheading">Keep your deadlines in view.</p></div><button class="button primary" id="calendar-new">＋ New project</button></div><div class="calendar-card"><div class="calendar-header"><button class="icon-btn" id="prev-month">‹</button><h2 id="calendar-month"></h2><button class="icon-btn" id="next-month">›</button></div><div class="weekdays"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div><div class="calendar-grid" id="calendar-grid"></div></div></section>
+
+      <section id="settings-view" class="view"><div class="page-heading"><div><p class="eyebrow">Make it yours</p><h1>Settings<span class="dot">.</span></h1><p class="subheading">Simple preferences for a calmer workspace.</p></div></div><div class="settings-list"><div class="setting-group"><span class="setting-icon">◐</span><div><h3>Appearance</h3><p>Choose how Project looks on your device.</p></div><button class="theme-toggle" id="theme-toggle"><span class="toggle-knob"></span><span id="theme-label">Light</span></button></div><div class="setting-group"><span class="setting-icon">⌁</span><div><h3>Workspace</h3><p>Personal workspace · Aarush</p></div><button class="text-button">Manage</button></div><div class="setting-group"><span class="setting-icon">i</span><div><h3>About Project</h3><p>Version 1.0 · Thoughtfully made for focused work.</p></div></div></div></section>
+    </main>
+  </div>
+  <div class="modal-backdrop" id="modal-backdrop"><div class="modal" role="dialog" aria-modal="true"><button class="modal-close" id="modal-close">×</button><p class="eyebrow">Start something new</p><h2>New project</h2><form id="project-form"><label>Project name<input id="project-name" required placeholder="e.g. Website refresh" /></label><label>Description<textarea id="project-description" rows="3" placeholder="What are you working towards?"></textarea></label><div class="form-row"><label>Deadline<input id="project-deadline" type="date" required /></label><label>Color<select id="project-color"><option value="lavender">Lavender</option><option value="mint">Mint</option><option value="peach">Peach</option><option value="blue">Blue</option></select></label></div><button class="button primary full" type="submit">Create project</button></form></div></div>
+  <script src="app.js"></script>
+</body>
+</html>
